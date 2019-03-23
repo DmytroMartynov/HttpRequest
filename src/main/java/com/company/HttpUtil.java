@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class HttpUtil1 {
+public class HttpUtil {
 
 
     public static String sendRequest(String url) {

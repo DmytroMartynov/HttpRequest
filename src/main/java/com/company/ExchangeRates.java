@@ -8,7 +8,7 @@ public class ExchangeRates implements Serializable {
     private String bank;
     private String baseCurrency;
     private String baseCurrencyLit;
-    private List<Rate> exchangeRate;
+    private List< Rate > exchangeRate;
 
     public ExchangeRates() {
     }
@@ -45,11 +45,11 @@ public class ExchangeRates implements Serializable {
         this.baseCurrencyLit = baseCurrencyLit;
     }
 
-    public List<Rate> getExchangeRate() {
+    public List< Rate > getExchangeRate() {
         return exchangeRate;
     }
 
-    public void setExchangeRate(List<Rate> exchangeRate) {
+    public void setExchangeRate(List< Rate > exchangeRate) {
         this.exchangeRate = exchangeRate;
     }
 }

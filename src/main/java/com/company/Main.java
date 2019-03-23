@@ -1,13 +1,25 @@
 package com.company;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
+        try {
+            System.out.println("Enter information like this: day(01).mounth(02).year(2014)");
+            Scanner in = new Scanner(System.in);
+            String num = in.nextLine();
+            DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+            Date date = dateFormat.parse(num);
+            String output = dateFormat.format(date);
+            String response = HttpUtil1.sendRequest(
+                    "https://api.privatbank.ua/p24api/exchange_rates?json=true&date="+output);
+            System.out.println(response);
 
-        long time = System.currentTimeMillis();
-        String response = HttpUtil.sendRequest("https://api.privatbank.ua/p24api/exchange_rates?json=true&date=01.12.2014",null,null);
-        time = System.currentTimeMillis()-time;
+        } catch (Exception e) {
+            System.out.println("Please enter the correct datatype");
+        }
 
-        System.out.println(response);
-        System.out.println("Request time: " + time/1000.0 + "s");
     }
 }
